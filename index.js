@@ -23,7 +23,7 @@ console.log("DASHBOARD_URL:", process.env.DASHBOARD_URL);
 app.use(
   cors({
     //origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
-    origin: ["https://marketiq-x656.vercel.app/", "https://marketiq-dashboard-ufci.vercel.app/"],
+    origin: ["https://marketiq-x656.vercel.app", "https://marketiq-dashboard-ufci.vercel.app"],
     credentials: true,
   }),
 );
