@@ -14,7 +14,7 @@ const { OrdersModel } = require("./model/OrdersModel");
 const { Signup } = require("./Controllers/AuthController");
 const authRoute = require("./Routes/AuthRoute");
 
-//const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
 const app = express();
