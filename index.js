@@ -18,6 +18,8 @@ const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
 const app = express();
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
+console.log("DASHBOARD_URL:", process.env.DASHBOARD_URL);
 app.use(
   cors({
     //origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
