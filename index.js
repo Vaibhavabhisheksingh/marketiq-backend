@@ -20,11 +20,19 @@ const uri = process.env.MONGO_URL;
 const app = express();
 app.use(
   cors({
-    origin: [`${process.env.CLIENT_URL}`, `${process.env.DASHBOARD_URL}`],
+    origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
     credentials: true,
   }),
 );
+
+app.use(cookieParser());
+
+app.use(express.json());
+
 app.use(bodyParser.json());
+
+app.use("/", authRoute);
+
 
 // // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -215,12 +223,6 @@ app.post("/newOrder", async (req, res) => {
 
   res.send("Order Saved");
 });
-
-app.use(cookieParser());
-
-app.use(express.json());
-
-app.use("/", authRoute);
 
 app.listen(PORT, () => {
   console.log("app started");
