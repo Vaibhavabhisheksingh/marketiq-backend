@@ -14,13 +14,14 @@ const { OrdersModel } = require("./model/OrdersModel");
 const { Signup } = require("./Controllers/AuthController");
 const authRoute = require("./Routes/AuthRoute");
 
-const PORT = process.env.PORT || 3002;
+//const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
 const app = express();
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
+    //origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
+    origin: ["https://marketiq-x656.vercel.app/", "https://marketiq-dashboard-ufci.vercel.app/"],
     credentials: true,
   }),
 );
